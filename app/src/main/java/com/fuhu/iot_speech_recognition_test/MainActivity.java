@@ -78,7 +78,7 @@ public class MainActivity extends Activity {
         if (requestCode == REQUEST_CODE && resultCode == RESULT_OK) {
 
             matches_text = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-
+            
             //Show potential result
             match_text_dialog = new Dialog(MainActivity.this);
             match_text_dialog.setContentView(R.layout.dialog_matches_frag);
@@ -101,7 +101,7 @@ public class MainActivity extends Activity {
                         System.out.println("off");
                         Lightbulb.setImageResource(R.drawable.lightoff);
                     }
-
+                    Speech.setText("You said: "+matches_text.get(position));
                     match_text_dialog.hide();
                 }
             });
